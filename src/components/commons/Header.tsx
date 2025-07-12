@@ -11,7 +11,7 @@ const Header = () => {
     <header className="w-full bg-gray-700 text-white py-4 px-6 sticky top-0 z-50">
       <div className="flex justify-between items-center">
         {/* logo  */}
-        <div><Link href="/">Logo</Link></div>
+        <div><Link href="/">Home</Link></div>
         {/* navbar */}
         <nav className="">
             <Link href="/admin">Admin Dashboard</Link>

@@ -24,21 +24,23 @@ const AdminProductCard: React.FC<ProductCardProps> = ({ product }) => {
   const imageUrl = product.thumbnail || product.images?.[0] || "/product.jpg";
 
   return (
-    <Card className="flex flex-col h-full shadow-sm border rounded-2xl overflow-hidden">
+    <Card className="flex flex-col h-full shadow-sm border rounded-2xl overflow-hidden p-0 m-0">
       <Link
         href={`/admin/products/${product.id}`}
-        className="flex-grow block"
+        className="flex-grow block p-2 rounded-md"
         aria-label={`View details for ${product.title}`}
       >
         {/* Product Image */}
-        <div className="relative w-full h-48 bg-gray-100">
-          <Image
+        <div className="relative w-full h-48 bg-gray-100 overflow-hidden">
+          {/* <Image
             src={imageUrl}
             alt={product.title}
             fill
             className="object-cover"
             sizes="(max-width: 640px) 100vw, (max-width: 768px) 50vw, 25vw"
-          />
+          /> */}
+           <img src={product.thumbnail} alt={product.title} 
+           className="object-contain"/>
         </div>
 
         {/* Title */}

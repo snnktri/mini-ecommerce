@@ -1,9 +1,9 @@
 "use server";
 
 import React from "react";
-import PagenatePage from "@/components/product/PagenatePage";
 import { fetchProducts } from "@/store/fetchProduct";
 import AdminProductCard from "@/components/admin/AdminProductCard";
+import AdminPaginate from "@/components/admin/AdminPagination";
 
 
 interface PageProps {
@@ -23,7 +23,7 @@ const Product = async ({searchParams}: PageProps) => {
         ))}
       </div>
 
-     <PagenatePage currentPage={currentPage}
+     <AdminPaginate currentPage={currentPage}
      products={products}/>
     </div>
   );

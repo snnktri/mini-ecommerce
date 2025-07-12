@@ -77,18 +77,18 @@ const Login = () => {
               type={showPassword ? "text" : "password"}
               {...register("password")}
               placeholder="••••••••"
-              className="border w-full p-2 mt-1 pr-10"
+              className="border w-full px-2 py-2 mt-1 pr-10"
               autoComplete="current-password"
             />
-            <button
+            <Button
               type="button"
               aria-label={showPassword ? "Hide password" : "Show password"}
               onClick={() => setShowPassword((v) => !v)}
-              className="absolute top-9 right-3 text-gray-500 hover:text-gray-700 focus:outline-none"
+              className="absolute right-1 top-1/2 -translate-y-1/5 text-gray-500 hover:text-gray-700 focus:outline-none"
               tabIndex={-1}
             >
               {showPassword ? <EyeOff size={20} /> : <Eye size={20} />}
-            </button>
+            </Button>
             {errors.password && (
               <p className="text-red-500 text-sm mt-1" role="alert">
                 {errors.password.message}
@@ -96,7 +96,7 @@ const Login = () => {
             )}
           </div>
 
-          <Button type="submit" className="w-full bg-gray-800 cursor-pointer">
+          <Button type="submit" className="w-full bg-gray-800 cursor-pointer text-white">
             Login
           </Button>
         </form>

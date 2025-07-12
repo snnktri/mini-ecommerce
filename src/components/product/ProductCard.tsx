@@ -31,22 +31,25 @@ const ProductCard: React.FC<ProductCardProps> = ({ product }) => {
   const imageUrl = product.thumbnail || product.images?.[0] || "/product.jpg";
 
   return (
-    <Card className="flex flex-col h-full shadow-md hover:shadow-xl transition-shadow duration-300 border rounded-2xl overflow-hidden">
+    <Card className="flex flex-col h-full shadow-md hover:shadow-xl transition-shadow duration-300 border rounded-2xl overflow-hidden
+    p-0">
       {/* clickabele card expect button */}
       <Link
         href={`/product/${product.id}`}
-        className="flex-grow block cursor-pointer"
+        className="flex-grow block cursor-pointer p-2 m-0"
         aria-label={`View details for ${product.title}`}
       >
         {/* image*/}
-        <div className="relative w-full h-48 bg-gray-100">
-          <Image
+        <div className="relative w-full h-48 bg-gray-100 overflow-hidden px-2 rounded-md">
+          {/* <Image
             src={imageUrl}
             alt={product.title}
             fill
             className="object-cover"
             sizes="(max-width: 640px) 100vw, (max-width: 768px) 50vw, 25vw"
-          />
+          /> */}
+          <img src={product.thumbnail} alt={product.title} 
+          className="object-contain"/>
         </div>
 
         {/* Title  of the poruct*/}
